@@ -1,4 +1,7 @@
 [package]
+authors = ["Jeff Glaum <jeffglaum@live.com>"]
+description = "Peripheral access API for Fujitsu/Spansion/Cypress/Infineon FM3 (MB9BF61XT) microcontrollers"
+keywords = ["no-std", "arm", "cortex-m", "fm3"]
 name = "mb9bf61xt"
 version = "0.1.0"
 edition = "2021"
@@ -8,3 +11,13 @@ edition = "2021"
 [dependencies]
 cortex-m = "0.7.7"
 vcell = "0.1.3"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = "0.7.3"
+
+[features]
+rt = ["cortex-m-rt/device"]
+
+[package.metadata.docs.rs]
+features = ["rt"]
